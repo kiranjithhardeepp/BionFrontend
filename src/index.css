@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@page {
+  margin: 0;
+}
+@media print {
+  .no-print {
+    display: none;
+  }
+}
+/* Styles for A4 print layout */
+@media print {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  .invoice-container {
+    width: 210mm; /* A4 width */
+    height: 297mm; /* A4 height */
+    padding: 20mm;
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+  }
+
+  .invoice {
+    margin: 0;
+  }
+
+  .header,
+  .invoice-info,
+  .billing-info,
+  .footer {
+    margin-bottom: 20px;
+  }
+
+  .company-name {
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .invoice-title {
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .invoice-info,
+  .billing-info {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .billing-table,
+  .item-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+
+  .billing-table td,
+  .item-table th,
+  .item-table td {
+    border: 1px solid #000;
+    padding: 8px;
+    text-align: center;
+  }
+
+  .item-table th {
+    background-color: #f1f1f1;
+    font-weight: bold;
+  }
+
+  .footer {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .bank-details {
+    font-size: 12px;
+  }
+
+  .signature {
+    text-align: right;
+  }
+}
+
+body {
+  background-color: #f0f8ff;
+}
