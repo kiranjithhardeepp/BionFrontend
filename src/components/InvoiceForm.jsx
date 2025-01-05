@@ -6,7 +6,7 @@ const InvoiceForm = ({ formData, handleChange }) => {
       <h2 className="text-center text-2xl font-bold mb-6">Invoice Form</h2>
       <form className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {/* Description of Good */}
-        <div>
+        {/* <div>
           <label className="block text-sm font-medium">Shipping to Name:</label>
           <input
             type="text"
@@ -35,8 +35,8 @@ const InvoiceForm = ({ formData, handleChange }) => {
             onChange={handleChange}
             className="mt-2 p-3 w-full border border-gray-700 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-gray-800 text-white"
           />
-        </div>
-        <div>
+        </div> */}
+        {/* <div>
           <label className="block text-sm font-medium">GST Number:</label>
           <input
             type="text"
@@ -45,7 +45,7 @@ const InvoiceForm = ({ formData, handleChange }) => {
             onChange={handleChange}
             className="mt-2 p-3 w-full border border-gray-700 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-gray-800 text-white"
           />
-        </div>
+        </div> */}
         <div>
           <label className="block text-sm font-medium">
             Description of Good:

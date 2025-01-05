@@ -1,6 +1,6 @@
 import React from "react";
 
-const InvoiceTemplate = ({ dataList, formData }) => {
+const InvoiceTemplate = ({ dataList, invoiceNumber }) => {
   console.log(dataList);
   return (
     <div className="p-4">
@@ -26,18 +26,26 @@ const InvoiceTemplate = ({ dataList, formData }) => {
           <div className="flex justify-between">
             {/* Left Column */}
             <div className="flex flex-col text-sm">
-              <span className="font-semibold">Invoice No.:</span>
-              <span className="font-semibold">Invoice Date: 12222</span>
-              <span className="font-semibold">PO No:</span>
-              <span className="font-semibold">PO Date:</span>
-              <span className="font-semibold">Site: PHC VANNAPPURAM</span>
+              <span className="font-semibold">Invoice No: {invoiceNumber}</span>
+              <span className="font-semibold">
+                Invoice Date:{dataList[0].invoiceDate}
+              </span>
+              <span className="font-semibold">PO No: {dataList[0].poNo}</span>
+              <span className="font-semibold">
+                PO Date:{dataList[0].poDate}
+              </span>
+              <span className="font-semibold">Site: {dataList[0].site}</span>
             </div>
 
             {/* Right Column */}
             <div className="flex flex-col text-right text-sm mt-4 md:mt-0">
               <span className="font-semibold">Tr. Mode: Road</span>
-              <span className="font-semibold">Veh. No.: KL37-A-2764</span>
-              <span className="font-semibold">Supply Date: 04.01.2025</span>
+              <span className="font-semibold">
+                Veh. No: {dataList[0].vehicleNo}
+              </span>
+              <span className="font-semibold">
+                Supply Date: {dataList[0].supplyDate}
+              </span>
             </div>
           </div>
         </div>
@@ -48,19 +56,19 @@ const InvoiceTemplate = ({ dataList, formData }) => {
               <td className="w-1/2 align-top border-r-2 border-t-2 border-gray-500">
                 <div className="p-2">
                   <p className="font-bold">Billed To:</p>
-                  <p>Name: {formData.name}</p>
-                  <p>Address: {formData.address}</p>
-                  <p>PHONE: {formData.phone}</p>
-                  <p>GSTIN/UID: {formData.gstnId}</p>
+                  <p>Name: {dataList[0].name}</p>
+                  <p>Address: {dataList[0].address}</p>
+                  <p>PHONE: {dataList[0].phone}</p>
+                  <p>GSTIN/UID: {dataList[0].gstnId}</p>
                 </div>
               </td>
               <td className="w-1/2 align-top border-t-2 border-gray-500 text-right">
                 <div className="p-2">
                   <p className="font-bold">Shipped To:</p>
-                  <p>Name: {formData.name}</p>
-                  <p>Address: {formData.address}</p>
-                  <p>PHONE: {formData.phone}</p>
-                  <p>GSTIN/UID: {formData.gstnId}</p>
+                  <p>Name: {dataList[0].name}</p>
+                  <p>Address: {dataList[0].address}</p>
+                  <p>PHONE: {dataList[0].phone}</p>
+                  <p>GSTIN/UID: {dataList[0].gstnId}</p>
                 </div>
               </td>
             </tr>
@@ -191,7 +199,7 @@ const InvoiceTemplate = ({ dataList, formData }) => {
                   Total
                 </td>
                 <td className="p-2 text-center border-b-2 border-gray-500">
-                  total
+                  ₹ {dataList[0].totalAmountNumber}
                 </td>
               </tr>
               <tr>
@@ -199,7 +207,7 @@ const InvoiceTemplate = ({ dataList, formData }) => {
                   colSpan={2}
                   className="border-b-2 p-2 text-center border-gray-500"
                 >
-                  INR SEVEN THOUSAND
+                  INR {dataList[0].totalAmountEnglish} ONLY
                 </td>
               </tr>
             </tbody>

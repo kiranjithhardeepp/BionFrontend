@@ -1,8 +1,8 @@
 import React from "react";
 
-const InvoiceStatic = ({ formData, handleChange }) => {
+const InvoiceStatic = ({ formData, handleChange, handleSubmit }) => {
   return (
-    <div className="bg-gray-100 min-h-screen flex items-center justify-center p-4">
+    <div className="no-print bg-gray-100 min-h-screen flex items-center justify-center p-4">
       <div className="bg-gray-900 w-full max-w-md rounded-md shadow-md p-6">
         <h2 className="text-2xl font-bold text-white mb-4 text-center">
           Shipping Details
@@ -158,6 +158,19 @@ const InvoiceStatic = ({ formData, handleChange }) => {
           {/* Total Amount in English */}
           <div>
             <label className="block text-sm font-medium text-white">
+              Total Amount (in NUMBER):
+            </label>
+            <input
+              type="text"
+              name="totalAmountNumber"
+              value={formData.totalAmountNumber}
+              onChange={handleChange}
+              className="mt-2 p-3 w-full border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholder="Enter total amount in English"
+            />
+          </div>
+          <div>
+            <label className="block text-sm font-medium text-white">
               Total Amount (in English):
             </label>
             <input
@@ -171,14 +184,6 @@ const InvoiceStatic = ({ formData, handleChange }) => {
           </div>
 
           {/* Submit Button */}
-          <div>
-            <button
-              type="submit"
-              className="w-full bg-blue-500 text-white font-medium py-3 rounded-md shadow-sm hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
-            >
-              Submit
-            </button>
-          </div>
         </form>
       </div>
     </div>
